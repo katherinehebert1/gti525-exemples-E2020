@@ -22,7 +22,7 @@ var Circle = function(x, y, r) {
 	}
 };
 
-Circle.prototype = new Point();
+Circle.prototype = Object.create(Point.prototype);
 Circle.prototype.constructor = Circle;
 
 Circle.prototype.toString = function() {
@@ -38,7 +38,7 @@ var Ellipse = function(x, y, r1, r2) {
 
 };
 
-Ellipse.prototype = new Circle();
+Ellipse.prototype = Object.create(Circle.prototype);
 Ellipse.prototype.constructor = Ellipse;
 Ellipse.prototype.toString = function() {
 	return "(" + this.x + "," + this.y + ", " + this.r + "," + this.r2 + ")";

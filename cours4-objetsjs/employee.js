@@ -36,7 +36,7 @@ var Employee = function(firstName, lastName, gender, title) {
 	this.title = title;	
 };
 
-Employee.prototype = new Person();
+Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee;
 
 Employee.prototype.print = function() {
